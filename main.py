@@ -59,7 +59,7 @@ def _quadratic_multiply(x, y):
       x_left, x_right = split_number(xvec)
       y_left, y_right = split_number(yvec)
 
-      return quadratic_multiply(x_left, y_left) + (quadratic_multiply(x_left, y_right) + quadratic_multiply(x_right, y_left)) + (quadratic_multiply(x_right, y_right))
+      return (bit_shift(quadratic_multiply(x_left, y_left), len(xvec)) + (bit_shift(quadratic_multiply(x_left, y_right), len(xvec)//2)) + (bit_shift(quadratic_multiply(x_right, y_left), len(xvec)//2)) + quadratic_multiply(x_right, y_right))
 
 
 
@@ -79,7 +79,7 @@ def _quadratic_multiply(x, y):
 def test_quadratic_multiply(x, y, f):
     start = time.time()
     # multiply two numbers x, y using function f
-    _quadratic_multiply(17,34)
+    _quadratic_multiply(x,y)
     
     return (time.time() - start)*1000
 
