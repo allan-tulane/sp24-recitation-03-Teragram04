@@ -76,16 +76,8 @@ def _quadratic_multiply(x, y):
 
     return BinaryNumber(mh.decimal_val + m1m.decimal_val + m2m.decimal_val +
                         l.decimal_val)
-    return (bit_shift(quadratic_multiply(x_left, y_left), len(xvec)) +
-            (bit_shift(quadratic_multiply(x_left, y_right),
-                       len(xvec) // 2)) +
-            (bit_shift(quadratic_multiply(x_right, y_left),
-                       len(xvec) // 2)) + quadratic_multiply(x_right, y_right))
 
-    #return (bit_shift(quadratic_multiply(x_left, y_left), len(xvec))) + (bit_shift(quadratic_multiply(x_left, y_right), len(xvec)//2)) + quadratic_multiply(x_right, y_left)
-
-  # pass
-  ###
+pass
 
 def test_quadratic_multiply(x, y, f):
   start = time.time()
